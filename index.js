@@ -1,5 +1,22 @@
-import {Post} from './post.js'
+import {Post,Blogger} from './post.js'
 
-const post = new Post("COOKING WAAKYE","Rasheed","clean the beans");
+const blogManager = new Blogger();
 
-console.log(post);
+const p1 = blogManager.createPost('COOK','Rasheed','boil 1 cubic meter of water');
+
+const p2 = blogManager.createPost('COOK','Rasheed','boil 2 cubic meter of water');
+
+const p3 = blogManager.createPost('COOK','Rasheed','boil 3 cubic meter of water');
+
+
+console.log(blogManager.getPosts());
+
+	blogManager.deletePost(p2.id);
+
+console.log(blogManager.getPosts());
+
+
+
+
+
+

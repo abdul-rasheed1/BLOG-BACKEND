@@ -15,3 +15,31 @@ export class Post{
 
 
 }
+
+export class Blogger {
+	constructor(){
+		this.posts = [];
+	}
+
+	createPost (title,writer,content){
+		const post = new Post(title,writer,content);
+		this.posts.push(post);
+		return post;
+	}
+
+	getPosts(){
+		const allPosts = [...this.posts];
+		return allPosts;
+	}
+
+	findPostById(id){
+		const postItem = this.posts.find((element)=>element.id === id);
+		return postItem;
+	}
+
+	deletePost(id){
+		this.posts = this.posts.filter((element)=> element.id !== id );
+	}
+
+
+}
